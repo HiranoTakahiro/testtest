@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>ePOS Print</title>
+
+    <script type="text/javascript" src="epos-2.27.0.js"></script>
+    <script src="print.js"></script>
+    </head>
+
+    <body>
+        <div>
+            <label for="itemValue">入力：</label>
+            <input type="text" id="itemValue" name="itemValue">
+        </div>
+
+        <div>
+            <button type="button" onclick="print('itemValue')">印刷</button>
+        </div>
+
+    </body>
+</html>
