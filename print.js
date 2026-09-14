@@ -25,8 +25,8 @@ function connectPrinter() {
     console.log("1.connectPrinter開始");
 
     ePosDev.connect(
-        "192.168.101.10",
-        //"172.16.10.1",
+        //"192.168.101.10",
+        "172.16.10.1",
         8043,
         function (result) {
             console.log("2.connect結果: " + result);
