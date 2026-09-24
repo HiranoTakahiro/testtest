@@ -10,12 +10,39 @@
 
     <body>
         <div>
-            <label for="itemValue">入力：</label>
-            <input type="text" id="itemValue" name="itemValue">
+            <label for="address">アドレス：</label>
+            <input type="text" id="address" name="itemValue">
         </div>
 
         <div>
-            <button type="button" onclick="print('itemValue')">印刷</button>
+            <button type="button" onclick="setPrinterAddress(document.getElementById('address').value); connectPrinter();">接続</button>
+        </div>
+
+        <div>
+            <label for="cardNumber">カード番号：</label>
+            <input type="text" id="cardNumber" name="cardNumber">
+        </div>
+        <div>
+            <label for="startDate">期限開始日：</label>
+            <input type="text" id="startDate" name="startDate">
+        </div>
+        <div>
+            <label for="endDate">期限終了日：</label>
+            <input type="text" id="endDate" name="endDate">
+        </div>
+
+        <div>
+            <button type="button" onclick="
+                try {
+                    setCardNumber(document.getElementById('cardNumber').value.trim());
+                    setEffectiveStartDate(document.getElementById('startDate').value);
+                    setEffectiveEndDate(document.getElementById('endDate').value);
+                    printDiscountReceipt();
+                } catch (e) {
+                    alert(e.message);
+                }
+            ">印刷
+            </button>
         </div>
 
     </body>
